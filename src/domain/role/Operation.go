@@ -1,4 +1,4 @@
-package domain
+package role
 
 type Operation struct{
 	Id int

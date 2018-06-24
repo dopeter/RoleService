@@ -1,9 +1,11 @@
-package domain
+package role
 
-import(
-	"errors"
+import (
 	"toolkit"
+	"errors"
 )
+
+
 
 var(
 	ADMIN_ROLE_NAME="Admin"
