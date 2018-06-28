@@ -1,8 +1,12 @@
 package role
 
+import "github.com/jinzhu/gorm"
 
 type Permission struct{
-	Id int
+	gorm.Model
 	Name string
-	ObjectOperationMap map[PermissionObject]Operation
+	Operation string
+	Path string
+	Desc string
+	RoleId int
 }

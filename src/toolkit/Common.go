@@ -23,5 +23,15 @@ func ToString(a interface{}) string {
 	if v, p := a.(float64); p {
 		return strconv.FormatFloat(v, 'f', -1, 32)
 	}
-	return "change to String error"
+	return ""
+}
+
+func ToInt(a interface{}) int{
+	if v,p:=a.(string);p{
+		if n, err := strconv.Atoi(v); err == nil{
+			return n
+		}
+	}
+
+	return -1
 }

@@ -3,6 +3,8 @@ package role
 import (
 	"toolkit"
 	"errors"
+	"log"
+	"github.com/jinzhu/gorm"
 )
 
 
@@ -15,10 +17,10 @@ var(
 )
 
 type Role struct{
-	RoleId int
+	gorm.Model
 	RoleName string
 	Desc string
-	Permissions []Permission
+	Permissions []*Permission `gorm:"FOREIGNKEY:RoleId"`
 }
 
 
@@ -34,6 +36,8 @@ func BuildAdmin()*Role{
 
 func BuildRole(roleName string,desc string) (*Role,error){
 
+	log.Println("heheh")
+
 	if len(roleName)>VALIDATION_ROLE_LENGTH{
 		return nil,errors.New(VALIDATION_ROLE_LENGTH_ERROR)
 	}
@@ -47,7 +51,7 @@ func BuildRole(roleName string,desc string) (*Role,error){
 	return role,nil
 }
 
-func(role *Role) RefreshPermission(permissions []Permission) error{
+func(role *Role) RefreshPermission(permissions []*Permission) error{
 	if permissions==nil || len(permissions)==0{
 		return errors.New(VALIDATION_PERMISSION_LENGTH_ERROR)
 	}

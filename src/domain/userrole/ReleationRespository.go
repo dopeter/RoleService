@@ -2,11 +2,13 @@ package userrole
 
 
 type ReleationRespisotry interface {
-	AddReleation (userId string,roleId int)
+	AddReleation (userId string,roleIds []int)
 
-	RemoveReleation(userId string,roleId int)
+	RemoveReleation(userId string)
 
-	RetrieveReleation(userId string)
+	RetrieveReleation(userId string) *Releation
+
+	UpdateReleation(releation *Releation)
 }
 
 

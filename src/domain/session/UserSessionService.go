@@ -10,7 +10,7 @@ type UserSessionService struct {
 	repository UserSessionRepository
 }
 
-func BuildUserSessionService(repositoryImpl *UserSessionRepository) *UserSessionService{
+func BuildUserSessionService(repositoryImpl UserSessionRepository) *UserSessionService{
 	return &UserSessionService{repository:repositoryImpl}
 }
 
