@@ -48,6 +48,11 @@ func(repository *SqlLiteRoleRepository) RetrieveRoleByIds(roleIds []int) []*role
 }
 
 func(repository *SqlLiteRoleRepository) AddRole(role *role.Role){
+/*
+	t := time.NewTimer(10 * time.Second)
+	expire := <- t.C
+	log.Println("Expiration time: %v.\n", expire)
+*/
 	repository.db.Create(role)
 }
 

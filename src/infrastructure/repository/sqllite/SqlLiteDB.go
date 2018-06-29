@@ -18,10 +18,10 @@ func buildDbEngine() *DbEngine{
 		return nil
 	}
 
-	db.LogMode(true)
+	//db.LogMode(true)
+	//db.DB().SetMaxOpenConns(1)
 
 	return &DbEngine{Engine:db}
-
 }
 
 var (

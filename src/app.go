@@ -20,7 +20,7 @@ func main(){
 	})
 */
 
-	log.Println("hahaha")
+	log.Println("Server begin")
 	var roleApp RoleAppService
 	roleApp=BuildRoleAppService()
 

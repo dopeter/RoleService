@@ -31,7 +31,7 @@ type roleAppService struct {
 	releationRepo userrole.ReleationRespisotry
 	sessionService *session.UserSessionService
 }
-
+//todo replace sqllite to mysql
 func BuildRoleAppService() RoleAppService{
 	var roleApp RoleAppService
 	roleApp=&roleAppService{

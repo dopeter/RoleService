@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"github.com/go-kit/kit/endpoint"
 	"domain/role"
-	"log"
 )
 
 type roleRequest struct{
@@ -44,7 +43,7 @@ func EncodeResponse(_ context.Context, w http.ResponseWriter, response interface
 func MakeRoleEndpoint(svc RoleAppService) endpoint.Endpoint{
 	return func(ctx context.Context, request interface{}) (interface{}, error) {
 		//todo use different biz function by request method , like restful
-		log.Println(ctx.Value("rm"))
+		//log.Println(ctx.Value("rm"))
 
 		req := request.(role.Role)
 		svc.AddRole(&req)
